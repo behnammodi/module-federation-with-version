@@ -20,11 +20,9 @@ module.exports = {
     extensions: ['*', '.js', '.jsx'],
   },
   output: {
-    path: path.resolve(__dirname, `./dist/${version}`),
     filename: 'bundle.js',
   },
   devServer: {
-    contentBase: path.resolve(__dirname, './dist/${version}'),
     port: 9001,
   },
   plugins: [

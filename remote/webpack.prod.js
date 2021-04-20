@@ -8,7 +8,6 @@ module.exports = merge(common, {
   mode: 'production',
   output: {
     path: path.resolve(__dirname, `./dist/${version}-prod`),
-    filename: 'bundle.js',
   },
   devServer: {
     contentBase: path.resolve(__dirname, './dist/${version}-prod'),

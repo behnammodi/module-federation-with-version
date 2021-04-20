@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { ModuleFederationPlugin } = require("webpack").container;
 const package = require('./package.json');
 const version = package.version;
@@ -24,6 +25,7 @@ module.exports = {
   },
   devServer: {
     contentBase: path.resolve(__dirname, './dist/${version}'),
+    port: 9001,
   },
   plugins: [
     new ModuleFederationPlugin({
@@ -33,6 +35,9 @@ module.exports = {
         "./Counter": './src/components/Counter.js',
       },
       shared: ["react", "react-dom"],
+    }),
+    new HtmlWebpackPlugin({
+      template: "./public/index.html",
     }),
   ],
 };

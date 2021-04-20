@@ -1,7 +1,6 @@
 const path = require('path');
 const { ModuleFederationPlugin } = require("webpack").container;
-
-const remote = '1.0.3-dev'
+require('dotenv').config();
 
 module.exports = {
   entry: path.resolve(__dirname, './src/index.js'),
@@ -29,7 +28,7 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "host",
       remotes: {
-        remote: `remote@http://localhost:9000/${remote}/remoteEntry.js`,
+        remote: `remote@http://localhost:9000/${process.env.REMOTE_VERSION}/remoteEntry.js`,
       },
       shared: ["react", "react-dom"],
     }),

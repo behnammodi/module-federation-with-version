@@ -1,0 +1,1 @@
+(self.webpackChunkremote=self.webpackChunkremote||[]).push([[712],{712:(e,n,t)=>{"use strict";t.r(n);var r=t(407),u=t.n(r),l=t(525);const c=function(){return u().createElement("div",null,"I'm Counter 2")};t.n(l)().render(u().createElement(c,null),document.getElementById("app"))}}]);

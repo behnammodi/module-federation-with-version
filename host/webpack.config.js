@@ -1,7 +1,7 @@
 const path = require('path');
 const { ModuleFederationPlugin } = require("webpack").container;
 
-const remote = '1.0.1'
+const remote = '1.0.3-dev'
 
 module.exports = {
   entry: path.resolve(__dirname, './src/index.js'),

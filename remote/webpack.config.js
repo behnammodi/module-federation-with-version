@@ -1,6 +1,7 @@
 const path = require('path');
 const { ModuleFederationPlugin } = require("webpack").container;
 const package = require('./package.json');
+const version = package.version;
 
 module.exports = {
   entry: path.resolve(__dirname, './src/index.js'),
@@ -18,16 +19,16 @@ module.exports = {
     extensions: ['*', '.js', '.jsx'],
   },
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, `./dist/${version}`),
     filename: 'bundle.js',
   },
   devServer: {
-    contentBase: path.resolve(__dirname, './dist'),
+    contentBase: path.resolve(__dirname, './dist/${version}'),
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "remote",
-      filename: "remoteEntry.js",
+      name: `remote`,
+      filename: `remoteEntry.js`,
       exposes: {
         "./Counter": './src/components/Counter.js',
       },

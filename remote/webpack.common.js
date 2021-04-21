@@ -1,8 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { ModuleFederationPlugin } = require("webpack").container;
-const package = require('./package.json');
-const version = package.version;
 
 module.exports = {
   entry: path.resolve(__dirname, './src/index.js'),
